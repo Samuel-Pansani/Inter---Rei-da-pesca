@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rei da Pesca | Rações e Acessórios</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#040B16',
+                            900: '#0A1628',
+                            800: '#0D213F',
+                            700: '#16325B',
+                        },
+                        gold: {
+                            200: '#F9F1D0',
+                            300: '#F3E5AB',
+                            400: '#E2BE5C',
+                            500: '#D4AF37',
+                            600: '#AA7C11',
+                        },
+                        brandblue: {
+                            400: '#5B9BD5',
+                            500: '#3B82F6',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 30px -5px rgba(212, 175, 55, 0.35)',
+                        'gold-btn': '0 10px 20px -5px rgba(212, 175, 55, 0.4)',
+                        'deep-card': '0 25px 50px -12px rgba(2, 6, 14, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #040B16;
+            background-image: 
+                radial-gradient(circle at 50% 25%, rgba(13, 33, 63, 0.65) 0%, transparent 70%),
+                radial-gradient(circle at 85% 90%, rgba(212, 175, 55, 0.07) 0%, transparent 45%);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F9F1D0 0%, #D4AF37 52%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold-gradient {
+            background: linear-gradient(135deg, #F9F1D0 0%, #D4AF37 50%, #AA7C11 100%);
+            background-size: 200% auto;
+            transition: all 0.25s ease;
+        }
+
+        .btn-gold-gradient:hover {
+            background-position: right center;
+            transform: translateY(-1px);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(13, 33, 63, 0.88) 0%, rgba(10, 22, 40, 0.96) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.28);
+        }
+
+        .menu-card {
+            background: linear-gradient(165deg, rgba(13, 33, 63, 0.92) 0%, rgba(7, 17, 33, 0.98) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.24);
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(249, 241, 208, 0.75);
+            box-shadow: 0 20px 35px -10px rgba(2, 6, 14, 0.85), 0 0 25px -5px rgba(212, 175, 55, 0.28);
+        }
+
+        .menu-card-featured {
+            background: linear-gradient(160deg, rgba(212, 175, 55, 0.2) 0%, rgba(13, 33, 63, 0.95) 65%, rgba(7, 17, 33, 0.98) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.65);
+            box-shadow: 0 0 30px -8px rgba(212, 175, 55, 0.3);
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .menu-card-featured:hover {
+            transform: translateY(-4px);
+            border-color: #F9F1D0;
+            box-shadow: 0 20px 38px -10px rgba(2, 6, 14, 0.9), 0 0 32px -4px rgba(212, 175, 55, 0.45);
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        .logo-float {
+            animation: subtleFloat 5s ease-in-out infinite;
+        }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #040B16; }
+        ::-webkit-scrollbar-thumb { background: #16325B; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Refinamentos de legibilidade e responsividade preservando a identidade original */
+        .text-\[10px\], .text-\[11px\] { font-size: 0.75rem !important; }
+        .text-slate-400 { color: #b4c2d5 !important; }
+        button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #f3e5ab !important; outline-offset: 3px; }
+        .inline-field-error { font-size: 0.75rem; color: #fda4af; line-height: 1.45; margin-top: .35rem; }
+        [aria-invalid="true"] { border-color: #fb7185 !important; box-shadow: 0 0 0 1px rgba(251,113,133,.25); }
+        #systemContainer .glass-card { box-shadow: 0 14px 28px -19px rgba(0,0,0,.7); }
+        @media (max-width:639px) {
+            table.mobile-cards { display: block; width: 100%; }
+            table.mobile-cards thead { display:none; }
+            table.mobile-cards tbody { display:grid; gap:.75rem; width:100%; }
+            table.mobile-cards tbody tr { display:block; border:1px solid rgba(212,175,55,.2); border-radius:1rem; padding:.6rem .8rem; background:rgba(4,11,22,.6); }
+            table.mobile-cards tbody td { display:flex; justify-content:space-between; align-items:center; gap:.65rem; padding:.45rem .2rem; text-align:right!important; border-bottom:1px solid rgba(148,163,184,.12); white-space:normal!important; min-width:0; max-width:none; word-break:break-word; }
+            table.mobile-cards tbody td:last-child { border-bottom:0; }
+            table.mobile-cards tbody td::before { content:attr(data-label); color:#b4c2d5; font-size:.75rem; font-weight:600; text-align:left; flex:0 0 37%; }
+            table.mobile-cards tbody tr td[colspan] {display:block; text-align:center!important;}
+            table.mobile-cards tbody tr td[colspan]::before {display:none;}
+            #systemContainer main { padding-top:1.5rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-200 min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- =========================================================================
+         DEFINIÇÃO DO LOGOTIPO OFICIAL EM SVG (FIEL À IMAGEM ENVIADA)
+         ========================================================================= -->
+    <svg class="hidden" aria-hidden="true">
+        <defs>
+            <linearGradient id="crownLeft" x1="60" y1="14" x2="82" y2="42" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F6E094"/>
+                <stop offset="100%" stop-color="#D7AC4B"/>
+            </linearGradient>
+            <linearGradient id="crownRight" x1="80" y1="14" x2="102" y2="42" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#CCA03F"/>
+                <stop offset="100%" stop-color="#A87C22"/>
+            </linearGradient>
+            <linearGradient id="splashBlue" x1="40" y1="100" x2="120" y2="145" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="100%" stop-color="#2E6F9E"/>
+            </linearGradient>
+
+            <symbol id="rei-da-pesca-emblem" viewBox="0 0 160 160">
+                <!-- Coroa Dourada Facetada de 3 Pontas com Esferas -->
+                <g transform="rotate(-5 81 28)">
+                    <path d="M65 39L60 23L73 31L81 16V39H65Z" fill="url(#crownLeft)"/>
+                    <path d="M81 16L89 31L102 23L97 39H81V16Z" fill="url(#crownRight)"/>
+                    <circle cx="59" cy="20.5" r="2.6" fill="#E6BE5A"/>
+                    <circle cx="81" cy="12.5" r="3" fill="#F6E094"/>
+                    <circle cx="103" cy="20.5" r="2.6" fill="#C99C3B"/>
+                </g>
+                <!-- 3 Respingos de Água em Azul na Base -->
+                <path d="M42 135C52 128 65 130 82 142C68 137 54 134 42 135Z" fill="url(#splashBlue)"/>
+                <path d="M98 131C101 116 108 106 113 108C117 110 114 117 109 120C105 122 101 126 98 131Z" fill="url(#splashBlue)"/>
+                <path d="M100 136C106 125 116 120 121 123C124 125 121 129 115 130C109 131 104 133 100 136Z" fill="url(#splashBlue)"/>
+                <!-- Peixe Estilizado em Linhas Brancas Saltando em Arco para a Direita -->
+                <path d="M66 53C56 54 48 58 43 64C47 64 50 64.5 51 65.5C45 74 44 85 45 94C48 82 55 66 66 53Z" fill="#FFFFFF"/>
+                <path d="M77 137C51 125 46 95 57 70C67 49 91 39 116 42C119 42.5 121 44 120 46.5C118 52 114 58 110 62C112 56 114 51 115 47.5C94 46 74 56 64 75C53 96 57 121 77 137Z" fill="#FFFFFF"/>
+                <path d="M115 47.5C108 55 103 65 101 73C108 72 115 68 121 66C123.5 65 125 67 123.5 69.5C116 79 102 85 90 81C81 78 78 69 81 60C81 67 85 74 93 76C102 78 111 75 117 70C110 72 101 75 94 72C97 65 103 54 111 47L115 47.5Z" fill="#FFFFFF"/>
+                <path d="M98 52C95 51.5 92.5 53.5 92.5 56.5C92.5 59.5 95.5 61.5 98.5 60.5C101 59.5 102 56.5 100.5 54C99.5 55.5 97.5 56.5 96 55.5C95 54.5 96 52.8 98 52Z" fill="#FFFFFF"/>
+                <path d="M84 78C72 80 62 88 59 99C66 93 74 89 83 87C77 86 73 87 69 89C73 84 78 81 84 78Z" fill="#FFFFFF"/>
+                <path d="M101 85C83 91 68 105 68 121C68 129 74 135 83 136C74 131 71 123 74 113C77 103 86 95 96 90C98 89 100 87 101 85Z" fill="#FFFFFF"/>
+                <path d="M93 93C86 98 82 107 84 115C88 109 92 102 95 96L93 93Z" fill="#FFFFFF"/>
+                <path d="M87 109C89 105 91 100 93 96" stroke="#040B16" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M75 123C82 128 91 124 98 116C95 125 94 135 98 143C86 143 76 135 73 126L75 123Z" fill="#FFFFFF"/>
+                <path d="M94 125L84 129M94 130L86 133M95 135L88 136" stroke="#040B16" stroke-width="1.6" stroke-linecap="round"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- =========================================================================
+         NOTIFICAÇÃO VISUAL GLOBAL (TOAST)
+         ========================================================================= -->
+    <div id="toastNotification" role="status" aria-live="polite" aria-atomic="true" class="fixed bottom-5 right-5 z-[70] hidden items-center gap-3 px-4 py-3.5 rounded-2xl glass-card border border-gold-500/60 shadow-deep-card text-sm text-white transition-all duration-300 max-w-sm w-[calc(100vw-2rem)]">
+        <div id="toastIcon" class="w-8 h-8 rounded-xl bg-gold-500/20 border border-gold-500/50 flex items-center justify-center text-gold-300 flex-shrink-0" aria-hidden="true"></div>
+        <div class="flex-1 min-w-0">
+            <p id="toastMessage" class="font-medium text-xs sm:text-sm text-slate-100"></p>
+            <button type="button" id="toastUndoBtn" class="hidden mt-1 text-sm font-bold text-gold-200 underline underline-offset-2">Desfazer</button>
+        </div>
+        <button type="button" id="toastCloseBtn" aria-label="Fechar notificação" class="self-start px-1 text-slate-200 hover:text-white text-xl" title="Fechar notificação">&times;</button>
+    </div>
+
+    <!-- =========================================================================
+         1. TELA DE LOGIN (MANTENDO TODAS AS CARACTERÍSTICAS ORIGINAIS)
+         ========================================================================= -->
+    <section id="view-login" class="flex-grow flex items-center justify-center px-4 pt-20 pb-10 z-10">
+        <div class="w-full max-w-[420px] relative mt-6">
+            
+            <!-- Medalhão com o Logo do Peixe Acima do Card -->
+            <div class="absolute -top-16 left-1/2 -translate-x-1/2 z-20">
+                <div class="logo-float w-32 h-32 rounded-3xl bg-gradient-to-b from-navy-800 to-navy-950 p-[2px] shadow-gold-glow flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold-200 via-gold-500 to-gold-600 opacity-85"></div>
+                    <div class="relative w-full h-full bg-[#041022] rounded-[22px] flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 relative z-10">
+                            <use href="#rei-da-pesca-emblem"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Centralizado com Cantos Arredondados -->
+            <div class="glass-card rounded-3xl shadow-deep-card pt-20 pb-8 px-7 sm:px-10 relative overflow-hidden">
+                
+                <!-- Título REI DA PESCA e Subtítulo RAÇÕES E ACESSÓRIOS -->
+                <div class="text-center mb-7">
+                    <h1 class="font-display text-2xl sm:text-[28px] font-bold tracking-[0.12em] uppercase text-white">
+                        REI <span class="text-gold-gradient">DA</span> PESCA
+                    </h1>
+                    <div class="flex items-center justify-center gap-3 mt-2 mb-3">
+                        <span class="h-[1.5px] w-8 sm:w-10 bg-gold-500/80 rounded-full"></span>
+                        <span class="font-display text-[11px] sm:text-xs uppercase tracking-[0.26em] text-brandblue-400 font-semibold">
+                            Rações e acessórios
+                        </span>
+                        <span class="h-[1.5px] w-8 sm:w-10 bg-gold-500/80 rounded-full"></span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 font-light">
+                        Acesse o sistema de gestão comercial.
+                    </p>
+                </div>
+
+                <!-- Formulário de Login -->
+                <form id="loginForm" class="space-y-4" novalidate>
+                    <div>
+                        <label for="loginEmail" class="block text-xs font-medium uppercase tracking-wider text-gold-300/90 mb-1.5 ml-1">
+                            E-mail de acesso
+                        </label>
+                        <input 
+                            type="email" 
+                            id="loginEmail" 
+                            value="admin@reidapesca.com.br" autocomplete="username"
+                            required
+                            placeholder="seu@email.com.br" 
+                            class="w-full px-4 py-3 bg-navy-950/85 border border-slate-700/70 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="loginPassword" class="block text-xs font-medium uppercase tracking-wider text-gold-300/90 mb-1.5 ml-1">
+                            Senha
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                autocomplete="current-password"
+                                required
+                                placeholder="••••••••" 
+                                class="w-full pl-4 pr-11 py-3 bg-navy-950/85 border border-slate-700/70 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+                            >
+                            <button type="button" id="togglePasswordBtn" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-gold-300 transition-colors" title="Mostrar/Ocultar Senha">
+                                <svg id="eyeIconOpen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1">
+                        <label class="flex items-center gap-2 cursor-pointer select-none">
+                            <input type="checkbox" id="rememberLoginCheckbox" class="w-4 h-4 rounded border-slate-600 bg-navy-950 text-gold-500 focus:ring-0">
+                            <span class="text-xs sm:text-sm text-slate-300">Lembrar e-mail neste navegador</span>
+                        </label>
+                        <button type="button" id="openForgotModalBtn" class="text-xs sm:text-sm font-medium text-gold-400 hover:text-gold-200 hover:underline transition-colors">
+                            Esqueceu a senha?
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-slate-300" id="loginDemoNote">Demonstração de interface: qualquer e-mail válido e uma senha não vazia permitem visualizar o protótipo. Não há autenticação real.</p>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-xl btn-gold-gradient text-navy-950 font-bold text-sm uppercase tracking-wider shadow-gold-btn flex items-center justify-center gap-2">
+                            <span>Entrar no Sistema</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         2. ESTRUTURA DO SISTEMA LOGADO (CABEÇALHO + PÁGINA INICIAL + 5 TELAS)
+         ========================================================================= -->
+    <div id="systemContainer" class="hidden flex-grow flex flex-col z-10">
+        
+        <!-- Cabeçalho Limpo: Apenas Logo à Esquerda e Botão Sair/Login à Direita -->
+        <header class="w-full border-b border-gold-500/20 bg-navy-950/90 backdrop-blur-md sticky top-0 z-30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 min-h-20 py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                
+                <!-- Logotipo Clicável (Volta à Página Inicial) -->
+                <button type="button" data-nav="home" class="flex items-center gap-3.5 text-left group focus:outline-none">
+                    <div class="w-12 h-12 rounded-2xl bg-navy-900 border border-gold-500/50 p-1 shadow-gold-glow flex items-center justify-center group-hover:border-gold-300 transition-colors">
+                        <svg class="w-10 h-10"><use href="#rei-da-pesca-emblem"></use></svg>
+                    </div>
+                    <div>
+                        <div class="font-display text-lg sm:text-xl font-bold tracking-[0.12em] uppercase text-white leading-tight">
+                            REI <span class="text-gold-gradient">DA</span> PESCA
+                        </div>
+                        <div class="flex items-center gap-2 mt-0.5">
+                            <span class="h-[1px] w-4 bg-gold-500/80"></span>
+                            <span class="font-display text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-brandblue-400 font-semibold">
+                                Rações e acessórios
+                            </span>
+                            <span class="h-[1px] w-4 bg-gold-500/80"></span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Acessos rápidos para tarefas frequentes -->
+                <div class="flex flex-wrap items-center justify-end gap-2">
+                    <button type="button" data-nav="vendas" class="px-3 py-2.5 rounded-xl bg-gold-500/15 hover:bg-gold-500/25 border border-gold-500/50 text-gold-200 text-xs sm:text-sm font-semibold transition-colors" aria-label="Abrir frente de caixa">PDV</button>
+                    <button type="button" id="openHelpBtn" class="px-3 py-2.5 rounded-xl border border-slate-600 hover:border-gold-500/60 text-slate-100 text-xs sm:text-sm transition-colors">Ajuda</button>
+                <!-- Botão Sair / Tela de Login -->
+                <button 
+                    type="button"
+                    id="logoutToLoginBtn"
+                    class="px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900/90 hover:bg-gold-500/15 text-gold-300 hover:text-gold-200 text-xs sm:text-sm font-medium transition-all flex items-center gap-2"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    <span class="hidden sm:inline">Sair</span><span class="sm:hidden">Sair</span>
+                </button>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Conteúdo Principal Dinâmico -->
+        <main class="flex-grow flex flex-col justify-center max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
+
+            <!-- =================================================================
+                 PÁGINA INICIAL: PAINEL SIMPLES, LIMPO E OBJETIVO COM OS 5 CARDS
+                 ================================================================= -->
+            <section id="view-home" class="w-full my-auto">
+                
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <h2 class="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
+                        Painel <span class="text-gold-gradient">Principal</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                        Selecione uma funcionalidade abaixo para iniciar a operação.
+                    </p>
+                </div>
+
+                <!-- Grid das 5 Funcionalidades -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <!-- 1. Cadastrar Produtos -->
+                    <button type="button" data-nav="produtos" class="menu-card rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform mb-5">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide group-hover:text-gold-300 transition-colors">
+                                Cadastrar Produtos
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                Gerencie o catálogo de rações, varas, iscas e acessórios com preços e estoque.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                            <span id="badgeCountProdutos">6 produtos ativos</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+                        </div>
+                    </button>
+
+                    <!-- 2. Registrar Entrada de Mercadorias -->
+                    <button type="button" data-nav="entrada" class="menu-card rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform mb-5">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide group-hover:text-gold-300 transition-colors">
+                                Registrar Entrada de Mercadorias
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                Dê entrada em notas fiscais e reponha o saldo de estoque dos produtos.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                            <span>Reposição de estoque</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+                        </div>
+                    </button>
+
+                    <!-- 3. Registrar Vendas (Destaque Visual Dourado) -->
+                    <button type="button" data-nav="vendas" class="menu-card-featured rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl btn-gold-gradient flex items-center justify-center text-navy-950 shadow-gold-btn group-hover:scale-105 transition-transform">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/50 text-gold-200 text-[10px] font-bold uppercase tracking-widest">
+                                    PDV Rápido
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-gold-200 uppercase tracking-wide">
+                                Registrar Vendas
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                                Realize vendas no balcão, calcule o total automaticamente e baixe o estoque.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gold-500/30 flex items-center justify-between text-xs font-bold text-gold-300 uppercase tracking-wider">
+                            <span>Abrir Frente de Caixa</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Iniciar &rarr;</span>
+                        </div>
+                    </button>
+
+                    <!-- 4. Cadastrar Clientes -->
+                    <button type="button" data-nav="clientes" class="menu-card rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform mb-5">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide group-hover:text-gold-300 transition-colors">
+                                Cadastrar Clientes
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                Cadastre pescadores, clientes recorrentes e pesqueiros parceiros da região.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                            <span id="badgeCountClientes">4 clientes cadastrados</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+                        </div>
+                    </button>
+
+                    <!-- 5. Consultar Histórico de Compras -->
+                    <button type="button" data-nav="historico" class="menu-card rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform mb-5">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide group-hover:text-gold-300 transition-colors">
+                                Consultar Histórico de Compras
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                Pesquise vendas realizadas por cliente, produto ou pagamento e veja o recibo detalhado.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                            <span id="badgeCountHistorico">4 vendas registradas</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Consultar &rarr;</span>
+                        </div>
+                    </button>
+
+                    <!-- 6. Consultar Estoque (Entrada e Saída de Mercadorias) -->
+                    <button type="button" data-nav="estoque" class="menu-card rounded-3xl p-6 text-left flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-[10px] font-bold uppercase tracking-wider">
+                                    Entradas & Saídas
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wide group-hover:text-gold-300 transition-colors">
+                                Consultar Estoque
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                Acompanhe o saldo atual de mercadorias e o extrato completo de entradas e saídas.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                            <span id="badgeCountEstoque">196 un. em estoque</span>
+                            <span class="group-hover:translate-x-1 transition-transform">Ver Estoque &rarr;</span>
+                        </div>
+                    </button>
+
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 1: CADASTRAR PRODUTOS
+                 ================================================================= -->
+            <section id="view-produtos" class="hidden w-full space-y-6">
+                <!-- Topo da Tela -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Módulo de Catálogo</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Cadastrar <span class="text-gold-gradient">Produtos</span>
+                        </h2>
+                    </div>
+                    <button type="button" data-nav="home" class="self-start sm:self-auto px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span>Voltar ao menu</span>
+                    </button>
+                </div>
+
+                <!-- Card do Formulário de Cadastro -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <h3 id="productFormTitle" class="font-display text-sm font-bold uppercase tracking-wider text-gold-300 mb-4">Novo Produto</h3>
+                    <form id="formCreateProduct" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Nome do Produto *</label>
+                            <input type="text" id="prodName" required placeholder="Ex: Ração P40 Carnívoros 25kg" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Categoria *</label>
+                            <select id="prodCategory" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                <option value="Rações">Rações</option>
+                                <option value="Varas & Molinetes">Varas & Molinetes</option>
+                                <option value="Iscas">Iscas</option>
+                                <option value="Acessórios">Acessórios</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Preço (R$) *</label>
+                                <input type="number" step="0.01" min="0.01" id="prodPrice" required placeholder="189.90" class="w-full px-3.5 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Estoque *</label>
+                                <input type="number" min="0" step="1" id="prodStock" required placeholder="0" class="w-full px-3.5 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2 lg:col-span-4 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+                            <div class="w-full sm:max-w-[260px]">
+                                <label for="prodMinStock" class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Estoque mínimo para alerta *</label>
+                                <input type="number" id="prodMinStock" min="0" step="1" required value="10" title="Quando o saldo ficar abaixo deste valor, o produto será sinalizado para reposição." class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                <p class="text-xs text-slate-300 mt-1">Alerta quando o saldo ficar abaixo do mínimo.</p>
+                            </div>
+                            <div class="flex gap-2 justify-end pt-2">
+                                <button type="button" id="cancelProductEditBtn" class="hidden px-5 py-3 rounded-xl border border-slate-600 text-slate-100 text-sm hover:bg-navy-800">Cancelar edição</button>
+                                <button type="submit" id="saveProductBtn" class="px-6 py-3 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-gold-btn">+ Salvar Produto</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Lista de Produtos Cadastrados -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">
+                            Produtos Cadastrados
+                        </h3>
+                        <span id="productsTableCount" class="text-xs text-gold-300 font-medium"></span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                    <th class="py-3 px-3">Produto</th>
+                                    <th class="py-3 px-3">Categoria</th>
+                                    <th class="py-3 px-3 text-right">Preço de Venda</th>
+                                    <th class="py-3 px-3 text-center">Estoque Atual</th>
+                                    <th class="py-3 px-3 text-right">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 2: REGISTRAR ENTRADA DE MERCADORIAS
+                 ================================================================= -->
+            <section id="view-entrada" class="hidden w-full space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Controle de Estoque</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Registrar <span class="text-gold-gradient">Entrada de Mercadorias</span>
+                        </h2>
+                    </div>
+                    <button type="button" data-nav="home" class="self-start sm:self-auto px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span>Voltar ao menu</span>
+                    </button>
+                </div>
+
+                <!-- Formulário de Entrada -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <h3 class="font-display text-sm font-bold uppercase tracking-wider text-gold-300 mb-4">
+                        Lançar Nova Entrada de Estoque
+                    </h3>
+                    <form id="formStockEntry" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Selecionar Produto *</label>
+                            <select id="entryProductSelect" required class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500"></select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Quantidade de Entrada (+) *</label>
+                            <input type="number" id="entryQuantity" min="1" step="1" placeholder="Quantidade recebida" required class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Fornecedor / Nota Fiscal</label>
+                            <input type="text" id="entrySupplier" placeholder="Ex: NF 4582 - NutriPeixe" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div class="sm:col-span-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+                            <p class="text-xs text-slate-300">Confira a mercadoria recebida antes de lançar a entrada. O saldo será atualizado nesta demonstração.</p>
+                            <button type="submit" class="px-6 py-3 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-gold-btn">
+                                Confirmar Entrada no Estoque
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Histórico das Últimas Entradas -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white mb-4">
+                        Últimas Entradas Registradas
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                    <th class="py-3 px-3">Data / Hora</th>
+                                    <th class="py-3 px-3">Produto</th>
+                                    <th class="py-3 px-3">Fornecedor / NF</th>
+                                    <th class="py-3 px-3 text-center">Qtd. Adicionada</th>
+                                    <th class="py-3 px-3 text-center">Saldo Final</th>
+                                </tr>
+                            </thead>
+                            <tbody id="entriesTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 3: REGISTRAR VENDAS (PDV)
+                 ================================================================= -->
+            <section id="view-vendas" class="hidden w-full space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Frente de Caixa • PDV</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Registrar <span class="text-gold-gradient">Vendas</span>
+                        </h2>
+                    </div>
+                    <button type="button" data-nav="home" class="self-start sm:self-auto px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span>Voltar ao menu</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Coluna Esquerda: Adicionar Produtos ao Pedido -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="glass-card rounded-3xl p-6 shadow-deep-card">
+                            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-gold-300 mb-4">
+                                1. Selecionar Cliente e Produtos
+                            </h3>
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Cliente da Venda</label>
+                                <select id="posClientSelect" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500"></select>
+                            </div>
+
+                            <form id="formAddCartItem" class="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-2 border-t border-slate-800/80">
+                                <div class="sm:col-span-2">
+                                    <label for="posSearchInput" class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Buscar produto por nome ou código</label>
+                                    <input type="search" id="posSearchInput" placeholder="Ex.: molinete ou P004" autocomplete="off" class="w-full px-4 py-2.5 mb-2 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500" aria-describedby="posSearchHint">
+                                    <label for="posProductSelect" class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Produto</label>
+                                    <select id="posProductSelect" required class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500"></select>
+                                    <p id="posSearchHint" class="text-xs text-slate-300 mt-1">Digite para filtrar os produtos disponíveis no estoque.</p>
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Quantidade</label>
+                                    <input type="number" id="posQuantity" min="1" value="1" required class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                </div>
+                                <div class="flex items-end">
+                                    <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-gold-500/20 hover:bg-gold-500/30 border border-gold-400/60 text-gold-200 font-semibold text-xs uppercase tracking-wider transition-all">
+                                        + Adicionar Item
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Itens da Venda Atual -->
+                        <div class="glass-card rounded-3xl p-6 shadow-deep-card">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">
+                                    Itens da Venda Atual
+                                </h3>
+                                <button type="button" id="clearCartBtn" class="text-xs text-slate-400 hover:text-rose-400 transition-colors">
+                                    Limpar Carrinho
+                                </button>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                            <th class="py-2.5 px-2">Item</th>
+                                            <th class="py-2.5 px-2 text-center">Qtd</th>
+                                            <th class="py-2.5 px-2 text-right">Unitário</th>
+                                            <th class="py-2.5 px-2 text-right">Subtotal</th>
+                                            <th class="py-2.5 px-2 text-right"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="posCartTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita: Resumo e Finalização -->
+                    <div class="glass-card rounded-3xl p-6 shadow-deep-card flex flex-col justify-between h-fit">
+                        <div>
+                            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-gold-300 mb-4">
+                                2. Pagamento e Fechamento
+                            </h3>
+
+                            <div class="mb-5">
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Forma de Pagamento</label>
+                                <select id="posPaymentMethod" class="w-full px-4 py-3 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option value="PIX">PIX</option>
+                                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                                    <option value="Cartão de Débito">Cartão de Débito</option>
+                                    <option value="Dinheiro">Dinheiro</option>
+                                </select>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-navy-950/90 border border-gold-500/30 space-y-2 mb-6">
+                                <div class="flex justify-between text-xs text-slate-400">
+                                    <span>Quantidade de Itens:</span>
+                                    <span id="posSummaryItemsCount">0</span>
+                                </div>
+                                <div class="flex justify-between items-baseline pt-2 border-t border-slate-800">
+                                    <span class="text-xs uppercase font-bold tracking-wider text-slate-300">Total a Pagar:</span>
+                                    <span id="posSummaryTotal" class="font-display text-2xl font-extrabold text-gold-300">R$ 0,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="finalizeSaleBtn" class="w-full py-4 px-6 rounded-xl btn-gold-gradient text-navy-950 font-extrabold text-sm uppercase tracking-wider shadow-gold-btn flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Finalizar Venda</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 4: CADASTRAR CLIENTES
+                 ================================================================= -->
+            <section id="view-clientes" class="hidden w-full space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Relacionamento</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Cadastrar <span class="text-gold-gradient">Clientes</span>
+                        </h2>
+                    </div>
+                    <button type="button" data-nav="home" class="self-start sm:self-auto px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span>Voltar ao menu</span>
+                    </button>
+                </div>
+
+                <!-- Formulário de Cliente -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <h3 id="clientFormTitle" class="font-display text-sm font-bold uppercase tracking-wider text-gold-300 mb-4">Novo Cliente ou Pesqueiro</h3>
+                    <form id="formCreateClient" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Nome Completo / Razão *</label>
+                            <input type="text" id="clientName" required placeholder="Ex: Pesqueiro Recanto Azul" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Telefone / WhatsApp *</label>
+                            <input type="tel" id="clientPhone" required inputmode="tel" maxlength="16" autocomplete="tel" placeholder="(17) 99123-4567" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">CPF ou CNPJ *</label>
+                            <input type="text" id="clientDoc" required inputmode="numeric" maxlength="18" placeholder="000.000.000-00" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Cidade *</label>
+                            <input type="text" id="clientCity" required placeholder="São José do Rio Preto - SP" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div class="sm:col-span-2 lg:col-span-4">
+                            <label for="clientNotes" class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Observações (opcional)</label>
+                            <input type="text" id="clientNotes" maxlength="180" placeholder="Ex.: cliente recorrente / contato preferencial" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div class="sm:col-span-2 lg:col-span-4 flex gap-2 justify-end pt-2">
+                            <button type="button" id="cancelClientEditBtn" class="hidden px-5 py-3 rounded-xl border border-slate-600 text-slate-100 text-sm hover:bg-navy-800">Cancelar edição</button>
+                            <button type="submit" id="saveClientBtn" class="px-6 py-3 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-gold-btn">+ Salvar Cliente</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tabela de Clientes -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white mb-4">
+                        Clientes Cadastrados
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                    <th class="py-3 px-3">Nome Completo</th>
+                                    <th class="py-3 px-3">Telefone / WhatsApp</th>
+                                    <th class="py-3 px-3">CPF / CNPJ</th>
+                                    <th class="py-3 px-3">Cidade</th>
+                                    <th class="py-3 px-3">Observações</th>
+                                    <th class="py-3 px-3 text-right">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientsTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 5: CONSULTAR HISTÓRICO DE COMPRAS
+                 ================================================================= -->
+            <section id="view-historico" class="hidden w-full space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Relatório de Movimentações</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Consultar <span class="text-gold-gradient">Histórico de Compras</span>
+                        </h2>
+                    </div>
+                    <button type="button" data-nav="home" class="self-start sm:self-auto px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span>Voltar ao menu</span>
+                    </button>
+                </div>
+
+                <!-- Filtros de Busca -->
+                <div class="glass-card rounded-3xl p-6 shadow-deep-card">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Buscar por Cliente, Produto ou Código</label>
+                            <input type="text" id="historySearchInput" placeholder="Digite o nome do cliente, item ou #código..." class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Filtrar Forma de Pagamento</label>
+                            <select id="historyPaymentFilter" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                <option value="TODOS">Todas as Formas</option>
+                                <option value="PIX">PIX</option>
+                                <option value="Cartão de Crédito">Cartão de Crédito</option>
+                                <option value="Cartão de Débito">Cartão de Débito</option>
+                                <option value="Cartão de Crédito/Débito">Crédito/Débito (histórico demonstrativo)</option>
+                                <option value="Dinheiro">Dinheiro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela do Histórico -->
+                <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                    <th class="py-3.5 px-4 whitespace-nowrap">Código</th>
+                                    <th class="py-3.5 px-4 whitespace-nowrap">Data / Hora</th>
+                                    <th class="py-3.5 px-4 whitespace-nowrap">Cliente</th>
+                                    <th class="py-3.5 px-4">Itens Comprados</th>
+                                    <th class="py-3.5 px-4 text-center whitespace-nowrap">Forma de Pagamento</th>
+                                    <th class="py-3.5 px-4 text-right whitespace-nowrap">Valor Total</th>
+                                    <th class="py-3.5 px-4 text-right whitespace-nowrap">Recibo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+                 TELA 6: CONSULTAR ESTOQUE (ENTRADA E SAÍDA DE MERCADORIAS)
+                 ================================================================= -->
+            <section id="view-estoque" class="hidden w-full space-y-6">
+                <!-- Cabeçalho da Tela -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <div>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Gestão de Inventário</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-wide">
+                            Consultar <span class="text-gold-gradient">Estoque (Entrada e Saída)</span>
+                        </h2>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <button type="button" data-nav="entrada" class="px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-1.5">
+                            <span>+ Nova Entrada</span>
+                        </button>
+                        <button type="button" data-nav="vendas" class="px-4 py-2.5 rounded-xl bg-gold-500/15 hover:bg-gold-500/25 border border-gold-500/40 text-gold-300 text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-1.5">
+                            <span>Registrar Saída (PDV)</span>
+                        </button>
+                        <button type="button" data-nav="home" class="px-4 py-2.5 rounded-xl border border-gold-500/40 bg-navy-900 hover:bg-gold-500/15 text-gold-300 text-xs sm:text-sm font-medium transition-all flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                            </svg>
+                            <span>Voltar ao menu</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 1. KPIs Rápidos de Estoque -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="glass-card rounded-2xl p-4 border border-gold-500/25">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 block">Saldo Total em Estoque</span>
+                        <div id="kpiTotalUnits" class="font-display text-2xl font-extrabold text-white mt-1">196 un.</div>
+                        <span id="kpiTotalSkus" class="text-[11px] text-gold-400 mt-0.5 block">em 6 produtos cadastrados</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 border border-gold-500/25">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 block">Valor em Estoque</span>
+                        <div id="kpiStockValue" class="font-display text-2xl font-extrabold text-gold-300 mt-1">R$ 0,00</div>
+                        <span class="text-[11px] text-slate-400 mt-0.5 block">Preço de venda estimado</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 border border-emerald-500/30">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 block">Total de Entradas</span>
+                        <div id="kpiTotalIn" class="font-display text-2xl font-extrabold text-emerald-400 mt-1">+50 un.</div>
+                        <span id="kpiCountIn" class="text-[11px] text-slate-400 mt-0.5 block">2 notas de entrada</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 border border-amber-500/30">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-300 block">Total de Saídas</span>
+                        <div id="kpiTotalOut" class="font-display text-2xl font-extrabold text-amber-400 mt-1">-11 un.</div>
+                        <span id="kpiCountOut" class="text-[11px] text-slate-400 mt-0.5 block">4 saídas por venda</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 border border-rose-500/30">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-rose-300 block">Alerta de Reposição</span>
+                        <div id="kpiLowStockCount" class="font-display text-2xl font-extrabold text-rose-400 mt-1">1 item</div>
+                        <span class="text-[11px] text-slate-400 mt-0.5 block">Conforme o mínimo de cada produto</span>
+                    </div>
+                </div>
+
+                <!-- 2. Alternador de Abas: Posição Atual vs Extrato de Movimentações (Entradas e Saídas) -->
+                <div class="flex flex-wrap items-center justify-between gap-4 bg-navy-900/90 p-2 rounded-2xl border border-gold-500/25">
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" id="tabBtnPosicao" class="px-5 py-2.5 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs uppercase tracking-wider shadow-gold-btn transition-all">
+                            1. Posição Atual do Estoque
+                        </button>
+                        <button type="button" id="tabBtnMovimentacoes" class="px-5 py-2.5 rounded-xl text-slate-300 hover:text-gold-300 hover:bg-navy-800/70 font-semibold text-xs uppercase tracking-wider transition-all">
+                            2. Histórico de entradas e saídas
+                        </button>
+                    </div>
+                    <div id="activeProductFilterBanner" class="hidden items-center gap-2 px-3 py-1.5 rounded-xl bg-gold-500/15 border border-gold-500/40 text-xs text-gold-200">
+                        <span id="activeProductFilterText">Filtrando produto</span>
+                        <button type="button" id="clearProductKardexFilterBtn" class="text-gold-400 hover:text-white font-bold ml-1">&times; Limpar</button>
+                    </div>
+                </div>
+
+                <!-- ABA 1: POSIÇÃO ATUAL DO ESTOQUE -->
+                <div id="estoqueSubViewPosicao" class="space-y-5">
+                    <!-- Filtros de Posição de Estoque -->
+                    <div class="glass-card rounded-3xl p-6 shadow-deep-card">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Pesquisar Mercadoria</label>
+                                <input type="text" id="stockPosSearchInput" placeholder="Digite o nome do produto ou código..." class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Filtrar por Categoria</label>
+                                <select id="stockPosCategoryFilter" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option value="TODAS">Todas as Categorias</option>
+                                    <option value="Rações">Rações</option>
+                                    <option value="Varas & Molinetes">Varas & Molinetes</option>
+                                    <option value="Iscas">Iscas</option>
+                                    <option value="Acessórios">Acessórios</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Status do Saldo</label>
+                                <select id="stockPosStatusFilter" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option value="TODOS">Todos os Status</option>
+                                    <option value="NORMAL">Estoque normal (saldo ≥ mínimo)</option>
+                                    <option value="BAIXO">Estoque baixo (abaixo do mínimo)</option>
+                                    <option value="ESGOTADO">Sem estoque (0 un.)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabela de Posição Atual -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">
+                                Inventário Físico e Balanço de Entradas / Saídas
+                            </h3>
+                            <span class="text-xs text-slate-400">Clique em "Ver histórico" para auditar um item</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                        <th class="py-3.5 px-3 whitespace-nowrap">Cód.</th>
+                                        <th class="py-3.5 px-3">Mercadoria</th>
+                                        <th class="py-3.5 px-3 whitespace-nowrap">Categoria</th>
+                                        <th class="py-3.5 px-3 text-center whitespace-nowrap text-emerald-400">Entradas (+)</th>
+                                        <th class="py-3.5 px-3 text-center whitespace-nowrap text-amber-400">Saídas (-)</th>
+                                        <th class="py-3.5 px-3 text-center whitespace-nowrap">Saldo Atual</th>
+                                        <th class="py-3.5 px-3 text-right whitespace-nowrap">Valor em Estoque</th>
+                                        <th class="py-3.5 px-3 text-center whitespace-nowrap">Status</th>
+                                        <th class="py-3.5 px-3 text-right whitespace-nowrap">Ações Rápidas</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="stockPositionTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABA 2: EXTRATO DE MOVIMENTAÇÕES (ENTRADAS E SAÍDAS) -->
+                <div id="estoqueSubViewMovimentacoes" class="hidden space-y-5">
+                    <!-- Filtros do Extrato -->
+                    <div class="glass-card rounded-3xl p-6 shadow-deep-card">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="sm:col-span-2">
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Buscar por Produto, NF, Código da Venda ou Cliente/Fornecedor</label>
+                                <input type="text" id="stockMovSearchInput" placeholder="Ex: Ração P40, NF 8841, #1049, Pesqueiro..." class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5">Tipo de Movimentação</label>
+                                <select id="stockMovTypeFilter" class="w-full px-4 py-2.5 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option value="TODAS">Todas (Entradas e Saídas)</option>
+                                    <option value="ENTRADA">Somente Entradas (+)</option>
+                                    <option value="SAIDA">Somente Saídas (-)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabela de Movimentações -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-deep-card">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">
+                                Histórico Cronológico de Entradas e Saídas de Mercadorias
+                            </h3>
+                            <span id="stockMovementsCountBadge" class="text-xs text-gold-300 font-medium"></span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-800 text-[11px] uppercase tracking-wider text-slate-400">
+                                        <th class="py-3.5 px-4 whitespace-nowrap">Data / Hora</th>
+                                        <th class="py-3.5 px-4 text-center whitespace-nowrap">Tipo</th>
+                                        <th class="py-3.5 px-4">Mercadoria</th>
+                                        <th class="py-3.5 px-4 text-center whitespace-nowrap">Qtd. Movimentada</th>
+                                        <th class="py-3.5 px-4 whitespace-nowrap">Documento / Origem</th>
+                                        <th class="py-3.5 px-4">Fornecedor / Cliente</th>
+                                        <th class="py-3.5 px-4 text-center whitespace-nowrap">Saldo Após</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="stockMovementsTableBody" class="divide-y divide-slate-800/70 text-sm"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         MODAL: ESQUECEU A SENHA (TELA DE LOGIN)
+         ========================================================================= -->
+    <div id="forgotPasswordModal" role="dialog" aria-modal="true" aria-label="Simulação de recuperação de senha" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/85 backdrop-blur-sm">
+        <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-deep-card border border-gold-500/40">
+            <h3 class="font-display text-lg font-bold text-white uppercase tracking-wider">
+                Recuperar <span class="text-gold-gradient">Senha</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1.5 mb-5">
+                Esta é uma demonstração do formulário: nenhum e-mail será enviado e nenhuma senha será alterada.
+            </p>
+            <form id="forgotPasswordForm" class="space-y-4">
+                <input type="email" id="recoveryEmailInput" required placeholder="seu@email.com.br" class="w-full px-4 py-3 bg-navy-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-gold-500">
+                <div class="flex gap-3">
+                    <button type="button" id="closeForgotModalBtn" class="w-1/2 py-2.5 rounded-xl border border-slate-700 text-xs sm:text-sm text-slate-300 hover:bg-slate-800/60">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="w-1/2 py-2.5 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs sm:text-sm uppercase">
+                        Simular envio
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL: RECIBO DETALHADO DA VENDA (HISTÓRICO DE COMPRAS)
+         ========================================================================= -->
+    <div id="receiptModal" role="dialog" aria-modal="true" aria-labelledby="receiptModalCode" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/85 backdrop-blur-sm">
+        <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-7 shadow-deep-card border border-gold-500/50">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-gold-400 font-semibold">Comprovante de Venda</span>
+                    <h3 id="receiptModalCode" class="font-display text-lg font-bold text-white">Venda #1050</h3>
+                </div>
+                <button type="button" id="closeReceiptModalBtn" class="text-slate-400 hover:text-gold-300 p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="receiptModalBody" class="py-4 space-y-3 text-xs sm:text-sm"></div>
+            <button type="button" id="closeReceiptBottomBtn" class="w-full py-2.5 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs uppercase tracking-wider">
+                Fechar Recibo
+            </button>
+        </div>
+    </div>
+
+    <!-- Confirmação explícita para ações destrutivas -->
+    <div id="confirmModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-navy-950/90 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle" aria-describedby="confirmModalDescription">
+        <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-deep-card">
+            <h3 id="confirmModalTitle" class="font-display text-lg font-bold text-white">Confirmar ação</h3>
+            <p id="confirmModalDescription" class="text-sm text-slate-200 mt-3 mb-6 leading-relaxed"></p>
+            <div class="flex justify-end gap-3">
+                <button type="button" id="confirmCancelBtn" class="px-5 py-3 rounded-xl border border-slate-600 text-slate-100 hover:bg-navy-800">Cancelar</button>
+                <button type="button" id="confirmAcceptBtn" class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusão de venda com total e acesso direto ao recibo -->
+    <div id="saleSuccessModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-navy-950/90 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="saleSuccessTitle">
+        <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-deep-card text-center">
+            <div class="mx-auto w-14 h-14 rounded-2xl flex items-center justify-center border border-emerald-400/50 text-emerald-300 bg-emerald-500/15 mb-4" aria-hidden="true">✓</div>
+            <h3 id="saleSuccessTitle" class="font-display text-xl font-bold text-white">Venda concluída</h3>
+            <p id="saleSuccessDetails" class="mt-3 text-slate-200 text-sm"></p>
+            <p class="text-xs text-slate-300 mt-2">Registro demonstrativo do front-end.</p>
+            <div class="flex gap-3 mt-6">
+                <button type="button" id="saleSuccessCloseBtn" class="w-1/2 px-3 py-3 rounded-xl border border-slate-600 text-slate-100 hover:bg-navy-800">Nova venda</button>
+                <button type="button" id="saleSuccessReceiptBtn" class="w-1/2 px-3 py-3 rounded-xl btn-gold-gradient text-navy-950 font-bold">Ver recibo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajuda de primeiro uso: documentação curta e contextual -->
+    <div id="helpModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-navy-950/90 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <div class="glass-card w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 shadow-deep-card">
+            <div class="flex justify-between items-start gap-3 mb-4"><h3 id="helpTitle" class="font-display text-xl font-bold text-white">Ajuda rápida • Rei da Pesca</h3><button type="button" id="helpCloseBtn" class="text-slate-200 text-2xl hover:text-gold-200" aria-label="Fechar ajuda">&times;</button></div>
+            <div class="space-y-4 text-sm text-slate-200 leading-relaxed">
+                <p><strong class="text-gold-300">Cadastrar produtos:</strong> informe nome, categoria, preço, saldo inicial conferido e estoque mínimo. Use “Editar” para corrigir dados sem recriar o item.</p>
+                <p><strong class="text-gold-300">Entrada de mercadorias:</strong> selecione o produto, informe a quantidade efetivamente recebida e, se disponível, a nota ou fornecedor.</p>
+                <p><strong class="text-gold-300">Frente de caixa:</strong> pesquise produto por nome/código, ajuste quantidades diretamente no carrinho, escolha o cliente e o pagamento e finalize para consultar o recibo. Atalho: Alt + Shift + V para abrir o PDV.</p>
+                <p><strong class="text-gold-300">Estoque:</strong> “Normal” significa saldo igual ou acima do mínimo; “Baixo” indica necessidade de reposição; “Esgotado” significa zero. Consulte o histórico de entradas e saídas para auditar operações.</p>
+                <p><strong class="text-gold-300">Correções e avisos:</strong> mensagens de erro explicam como corrigir os campos. Exclusões e limpeza do carrinho exigem confirmação e oferecem desfazer.</p>
+                <p class="rounded-xl bg-gold-500/10 border border-gold-500/30 p-3"><strong>Modo demonstração:</strong> as informações são temporárias e reiniciam ao recarregar a página. Não há banco de dados, segurança de login ou envio de e-mails. Não insira dados pessoais reais neste protótipo.</p>
+            </div>
+            <button type="button" id="helpBottomCloseBtn" class="w-full mt-6 py-3 rounded-xl btn-gold-gradient text-navy-950 font-bold">Entendi</button>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         JAVASCRIPT INTEGRADO (SEM ERROS DE REFERÊNCIA E 100% FUNCIONAL)
+         ========================================================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const state = {
+                products: [
+                    { id: 1, name: 'Ração P40 Carnívoros 25kg', category: 'Rações', price: 189.90, stock: 35 },
+                    { id: 2, name: 'Ração Engorda Tilápia 32% 25kg', category: 'Rações', price: 144.50, stock: 50 },
+                    { id: 3, name: 'Vara Telescópica Carbono 4,5m', category: 'Varas & Molinetes', price: 219.00, stock: 14 },
+                    { id: 4, name: 'Molinete Marine Gold 4000', category: 'Varas & Molinetes', price: 279.90, stock: 9 },
+                    { id: 5, name: 'Massa Especial Tambaqui Mel 1kg', category: 'Iscas', price: 26.90, stock: 68 },
+                    { id: 6, name: 'Caixa Organizadora Dupla Impermeável', category: 'Acessórios', price: 89.90, stock: 20 }
+                ],
+                clients: [
+                    { id: 1, name: 'Pesqueiro Águas Claras', phone: '(17) 99741-3302', doc: '14.528.900/0001-12', city: 'Mirassol - SP' },
+                    { id: 2, name: 'Carlos Eduardo Pescador', phone: '(17) 99124-8810', doc: '348.912.408-55', city: 'São José do Rio Preto - SP' },
+                    { id: 3, name: 'Marcos Vinícius Silva', phone: '(17) 98112-4500', doc: '289.441.008-19', city: 'Bady Bassitt - SP' },
+                    { id: 4, name: 'Estância & Pesca Rio Grande', phone: '(17) 99605-7122', doc: '29.881.410/0001-80', city: 'Fronteira - MG' }
+                ],
+                stockEntries: [
+                    { id: 1, date: '20/10/2026 09:15', productName: 'Ração P40 Carnívoros 25kg', supplier: 'NF 8841 - NutriPeixe', qty: 20, finalStock: 35 },
+                    { id: 2, date: '19/10/2026 16:40', productName: 'Massa Especial Tambaqui Mel 1kg', supplier: 'NF 1920 - Iscas Brasil', qty: 30, finalStock: 68 }
+                ],
+                salesHistory: [
+                    { id: '#1049', date: '20/10/2026 14:22', client: 'Pesqueiro Águas Claras', items: '2x Ração P40 Carnívoros 25kg, 1x Ração Engorda Tilápia 32% 25kg', payment: 'PIX', total: 524.30 },
+                    { id: '#1048', date: '20/10/2026 11:05', client: 'Carlos Eduardo Pescador', items: '1x Vara Telescópica Carbono 4,5m, 2x Massa Especial Tambaqui Mel 1kg', payment: 'Cartão de Crédito/Débito', total: 272.80 },
+                    { id: '#1047', date: '19/10/2026 17:48', client: 'Marcos Vinícius Silva', items: '1x Molinete Marine Gold 4000', payment: 'PIX', total: 279.90 },
+                    { id: '#1046', date: '19/10/2026 10:15', client: 'Estância & Pesca Rio Grande', items: '4x Ração Engorda Tilápia 32% 25kg', payment: 'Dinheiro', total: 578.00 }
+                ],
+                stockMovements: [
+                    { id: 101, date: '20/10/2026 14:22', type: 'SAIDA', productId: 1, productName: 'Ração P40 Carnívoros 25kg', qty: 2, document: 'Venda #1049', party: 'Pesqueiro Águas Claras', balanceAfter: 35 },
+                    { id: 102, date: '20/10/2026 14:22', type: 'SAIDA', productId: 2, productName: 'Ração Engorda Tilápia 32% 25kg', qty: 1, document: 'Venda #1049', party: 'Pesqueiro Águas Claras', balanceAfter: 50 },
+                    { id: 103, date: '20/10/2026 11:05', type: 'SAIDA', productId: 3, productName: 'Vara Telescópica Carbono 4,5m', qty: 1, document: 'Venda #1048', party: 'Carlos Eduardo Pescador', balanceAfter: 14 },
+                    { id: 104, date: '20/10/2026 11:05', type: 'SAIDA', productId: 5, productName: 'Massa Especial Tambaqui Mel 1kg', qty: 2, document: 'Venda #1048', party: 'Carlos Eduardo Pescador', balanceAfter: 68 },
+                    { id: 105, date: '20/10/2026 09:15', type: 'ENTRADA', productId: 1, productName: 'Ração P40 Carnívoros 25kg', qty: 20, document: 'NF 8841', party: 'NutriPeixe', balanceAfter: 37 },
+                    { id: 106, date: '19/10/2026 17:48', type: 'SAIDA', productId: 4, productName: 'Molinete Marine Gold 4000', qty: 1, document: 'Venda #1047', party: 'Marcos Vinícius Silva', balanceAfter: 9 },
+                    { id: 107, date: '19/10/2026 16:40', type: 'ENTRADA', productId: 5, productName: 'Massa Especial Tambaqui Mel 1kg', qty: 30, document: 'NF 1920', party: 'Iscas Brasil', balanceAfter: 70 },
+                    { id: 108, date: '19/10/2026 10:15', type: 'SAIDA', productId: 2, productName: 'Ração Engorda Tilápia 32% 25kg', qty: 4, document: 'Venda #1046', party: 'Estância & Pesca Rio Grande', balanceAfter: 51 }
+                ],
+                cart: []
+            };
+            // Protótipo de interface: todos os dados operacionais permanecem apenas em memória.
+            // A preferência "lembrar e-mail" nunca armazena senha.
+            const $ = id => document.getElementById(id);
+            const formatBRL = value => Number(value).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+            const dateTime = () => new Date().toLocaleString('pt-BR', { dateStyle:'short', timeStyle:'short' });
+            const digits = value => String(value || '').replace(/\D/g,'');
+            const clean = text => String(text || '').trim().replace(/\s+/g, ' ');
+            const keyName = text => clean(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+            const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+            const productCode = p => `#P${String(p.id).padStart(3,'0')}`;
+            const stockKind = p => p.stock === 0 ? 'ESGOTADO' : (p.stock < (p.minStock ?? 10) ? 'BAIXO' : 'NORMAL');
+            const statusText = kind => ({NORMAL:'Normal', BAIXO:'Estoque baixo', ESGOTADO:'Esgotado'})[kind];
+            const statusClass = kind => ({NORMAL:'bg-emerald-950/80 text-emerald-300 border-emerald-500/35', BAIXO:'bg-amber-950/80 text-amber-300 border-amber-500/40', ESGOTADO:'bg-rose-950/90 text-rose-300 border-rose-500/40'})[kind];
+            const badgeStatus = p => `<span class="inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold ${statusClass(stockKind(p))}" title="Estoque mínimo: ${p.minStock} un.">${statusText(stockKind(p))}</span>`;
+            state.products.forEach(p => p.minStock = 10);
+            state.clients.forEach(c => c.notes = '');
+            const sequence = {product:Math.max(...state.products.map(p=>p.id)),client:Math.max(...state.clients.map(c=>c.id)),movement:Math.max(...state.stockMovements.map(m=>m.id)),entry:Math.max(...state.stockEntries.map(e=>e.id))};
+            let nextSaleNumber = Math.max(...state.salesHistory.map(s => Number(s.id.replace(/\D/g,'')))) + 1;
+            let editingProductId = null;
+            let editingClientId = null;
+            let lastSale = null;
+            let modalFocus = null;
+            let confirmAction = null;
+            let currentModal = null;
+            let toastTimer;
+            let toastUndo = null;
+            const toasts = {
+                success: {icon:'✓', border:'border-emerald-500/65', bg:'bg-emerald-500/20', fg:'text-emerald-300'},
+                error: {icon:'!', border:'border-rose-500/70', bg:'bg-rose-500/20', fg:'text-rose-300'},
+                warning: {icon:'!', border:'border-amber-500/65', bg:'bg-amber-500/20', fg:'text-amber-200'},
+                info: {icon:'i', border:'border-gold-500/60', bg:'bg-gold-500/20', fg:'text-gold-300'}
+            };
+            function closeToast() {
+                clearTimeout(toastTimer);
+                $('toastNotification').classList.add('hidden'); $('toastNotification').classList.remove('flex');
+                toastUndo = null; $('toastUndoBtn').classList.add('hidden');
+            }
+            function showToast(message, type='success', undo=null) {
+                closeToast();
+                const kind = toasts[type] || toasts.info;
+                $('toastNotification').className = `fixed bottom-5 right-5 z-[70] flex items-center gap-3 px-4 py-3.5 rounded-2xl glass-card border shadow-deep-card text-sm text-white transition-all duration-300 max-w-sm w-[calc(100vw-2rem)] ${kind.border}`;
+                $('toastNotification').setAttribute('role', type === 'error' ? 'alert' : 'status');
+                $('toastNotification').setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
+                $('toastIcon').className = `w-8 h-8 rounded-xl border flex items-center justify-center flex-shrink-0 font-bold ${kind.bg} ${kind.fg} ${kind.border}`;
+                $('toastIcon').textContent = kind.icon;
+                $('toastMessage').textContent = message;
+                toastUndo = undo;
+                $('toastUndoBtn').classList.toggle('hidden', !undo);
+                toastTimer = setTimeout(closeToast, type === 'error' ? 12000 : (undo ? 9000 : 6500));
+            }
+            $('toastCloseBtn').addEventListener('click',closeToast);
+            $('toastUndoBtn').addEventListener('click',() => {
+                const operation = toastUndo;
+                closeToast();
+                if (operation) operation();
+            });
+            function showModal(id, autofocusId) {
+                if (currentModal && currentModal !== id) closeModal(currentModal, false);
+                modalFocus = document.activeElement;
+                $(id).classList.remove('hidden'); $(id).classList.add('flex');
+                currentModal = id;
+                const target = $(autofocusId) || $(id).querySelector('button,input');
+                if(target) target.focus();
+            }
+            function closeModal(id, restoreFocus=true) {
+                const el = $(id); if(!el) return;
+                el.classList.add('hidden'); el.classList.remove('flex');
+                if(currentModal===id) currentModal=null;
+                if(restoreFocus && modalFocus?.isConnected) modalFocus.focus();
+            }
+            function askConfirmation(title, message, label, callback) {
+                $('confirmModalTitle').textContent=title;
+                $('confirmModalDescription').textContent=message;
+                $('confirmAcceptBtn').textContent=label;
+                confirmAction=callback;
+                showModal('confirmModal','confirmCancelBtn');
+            }
+            $('confirmCancelBtn').addEventListener('click',()=>{confirmAction=null;closeModal('confirmModal');});
+            $('confirmAcceptBtn').addEventListener('click',()=>{
+                const cb=confirmAction; confirmAction=null; closeModal('confirmModal'); if(cb) cb();
+            });
+            ['confirmModal','receiptModal','helpModal','forgotPasswordModal','saleSuccessModal'].forEach(id => {
+                $(id).addEventListener('click',e=>{
+                    if(e.target===e.currentTarget && id!=='confirmModal') closeModal(id);
+                });
+            });
+            document.addEventListener('keydown',e => {
+                if(currentModal && e.key==='Escape') {
+                    e.preventDefault();
+                    if(currentModal==='confirmModal') confirmAction=null;
+                    closeModal(currentModal);
+                    return;
+                }
+                if(!currentModal || e.key!=='Tab') return;
+                const focusable=Array.from($(currentModal).querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(el=>el.getClientRects().length);
+                if(!focusable.length)return;
+                const first=focusable[0],last=focusable.at(-1);
+                if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+                else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+            });
+            // Acesso rápido opcional: Alt+Shift+V abre o PDV a partir do sistema logado.
+            document.addEventListener('keydown',e => {
+                if(e.altKey && e.shiftKey && e.key.toLowerCase()==='v' && !currentModal && !$('systemContainer').classList.contains('hidden')) {
+                    e.preventDefault();navigateTo('vendas');$('posSearchInput').focus();
+                }
+            });
+            $('openHelpBtn').addEventListener('click',()=>showModal('helpModal','helpCloseBtn'));
+            $('helpCloseBtn').addEventListener('click',()=>closeModal('helpModal'));
+            $('helpBottomCloseBtn').addEventListener('click',()=>closeModal('helpModal'));
+            // Validação acessível: mensagem próxima ao campo, sem perder dados digitados.
+            function clearFieldError(input) {
+                if(!input)return;
+                input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby');
+                input.parentElement.querySelectorAll(`.inline-field-error[data-for="${input.id}"]`).forEach(e=>e.remove());
+            }
+            function fieldError(id,message) {
+                const input=$(id); if(!input)return false;
+                clearFieldError(input);
+                input.setAttribute('aria-invalid','true');
+                const msg=document.createElement('p'); msg.className='inline-field-error'; msg.dataset.for=id;
+                msg.id=`err-${id}`; msg.setAttribute('role','alert'); msg.textContent=message;
+                input.setAttribute('aria-describedby',msg.id);
+                input.insertAdjacentElement('afterend',msg);
+                input.focus();
+                return false;
+            }
+            function clearFormErrors(form) {form.querySelectorAll('input,select').forEach(clearFieldError);}
+            document.querySelectorAll('form').forEach(form=>{
+                form.noValidate=true;
+                form.addEventListener('input',e=>{
+                    if(e.target.matches('input,select'))clearFieldError(e.target);
+                });
+                form.addEventListener('change',e=>{
+                    if(e.target.matches('input,select'))clearFieldError(e.target);
+                });
+            });
+            // Associar rótulos sem "for" ao campo pertinente nos formulários.
+            document.querySelectorAll('label:not([for])').forEach(label => {
+                const container=label.parentElement;
+                const control=container?.querySelector('input,select,textarea');
+                if(control && control.id) label.setAttribute('for',control.id);
+            });
+            function validInteger(value,min) {return String(value).trim()!=='' && Number.isSafeInteger(Number(value)) && Number(value)>=min;}
+            function validMoney(value) {return String(value).trim()!=='' && Number.isFinite(Number(value)) && Number(value)>0 && Math.round(Number(value)*100)/100===Number(value);}
+            function validEmail(value) {return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean(value));}
+            function maskPhone(value) {
+                const n=digits(value).slice(0,11); if(n.length<3)return n;
+                const start=`(${n.slice(0,2)}) `, tail=n.slice(2);
+                return start+(tail.length<=4?tail:(tail.length<=8?`${tail.slice(0,4)}-${tail.slice(4)}`:`${tail.slice(0,5)}-${tail.slice(5)}`));
+            }
+            function maskDoc(value) {
+                const n=digits(value).slice(0,14);
+                if(n.length<=11) return n.replace(/^(\d{3})(\d)/,'$1.$2').replace(/^(\d{3}\.\d{3})(\d)/,'$1.$2').replace(/^(\d{3}\.\d{3}\.\d{3})(\d)/,'$1-$2');
+                return n.replace(/^(\d{2})(\d)/,'$1.$2').replace(/^(\d{2}\.\d{3})(\d)/,'$1.$2').replace(/^(\d{2}\.\d{3}\.\d{3})(\d)/,'$1/$2').replace(/^(\d{2}\.\d{3}\.\d{3}\/\d{4})(\d)/,'$1-$2');
+            }
+            $('clientPhone').addEventListener('input',e=>e.target.value=maskPhone(e.target.value));
+            $('clientDoc').addEventListener('input',e=>e.target.value=maskDoc(e.target.value));
+            function decorateMobileTables() {
+                document.querySelectorAll('#systemContainer table').forEach(table => {
+                    table.classList.add('mobile-cards');
+                    const labels=Array.from(table.querySelectorAll('thead th')).map(th=>clean(th.textContent));
+                    table.querySelectorAll('tbody tr').forEach(row => {
+                        Array.from(row.children).forEach((td,i) => {
+                            if(td.tagName==='TD' && !td.hasAttribute('colspan')) td.dataset.label=labels[i] || 'Ações';
+                        });
+                    });
+                });
+            }
+            const subViews=['home','produtos','entrada','vendas','clientes','historico','estoque'];
+            function navigateTo(screen) {
+                if(screen==='login') {
+                    $('systemContainer').classList.add('hidden'); $('view-login').classList.remove('hidden');
+                } else {
+                    $('view-login').classList.add('hidden'); $('systemContainer').classList.remove('hidden');
+                    subViews.forEach(view=> $('view-'+view).classList.toggle('hidden',view!==screen));
+                    refreshAllViews();
+                }
+                if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)window.scrollTo(0,0);
+                else window.scrollTo({top:0,behavior:'smooth'});
+            }
+            document.querySelectorAll('[data-nav]').forEach(btn=>btn.addEventListener('click',()=>navigateTo(btn.dataset.nav)));
+            const emailStorageKey='rei-da-pesca-demo-email';
+            try {
+                const email=localStorage.getItem(emailStorageKey);
+                if(email){$('loginEmail').value=email;$('rememberLoginCheckbox').checked=true;}
+            }catch(e){}
+            $('loginForm').addEventListener('submit',e=>{
+                e.preventDefault();
+                if(!validEmail($('loginEmail').value))return fieldError('loginEmail','Informe um e-mail válido, como nome@exemplo.com.');
+                if(!$('loginPassword').value.trim())return fieldError('loginPassword','Preencha a senha para acessar a demonstração.');
+                try {
+                    if($('rememberLoginCheckbox').checked) localStorage.setItem(emailStorageKey,clean($('loginEmail').value));
+                    else localStorage.removeItem(emailStorageKey);
+                }catch(e){}
+                navigateTo('home');showToast('Bem-vindo à demonstração! Não há autenticação real.','info');
+            });
+            $('logoutToLoginBtn').addEventListener('click',()=>{navigateTo('login');$('loginPassword').value='';showToast('Você voltou à tela de acesso da demonstração.','info');});
+            $('togglePasswordBtn').setAttribute('aria-label','Mostrar senha');
+            $('togglePasswordBtn').addEventListener('click',()=>{
+                const input=$('loginPassword'); input.type=input.type==='password'?'text':'password';
+                $('togglePasswordBtn').setAttribute('aria-label',input.type==='password'?'Mostrar senha':'Ocultar senha');
+            });
+            $('openForgotModalBtn').addEventListener('click',()=>showModal('forgotPasswordModal','recoveryEmailInput'));
+            $('closeForgotModalBtn').addEventListener('click',()=>closeModal('forgotPasswordModal'));
+            $('forgotPasswordForm').addEventListener('submit',e=>{
+                e.preventDefault();
+                if(!validEmail($('recoveryEmailInput').value))return fieldError('recoveryEmailInput','Informe um e-mail válido para simular o formulário.');
+                closeModal('forgotPasswordModal');
+                showToast('Simulação concluída: nenhum e-mail foi enviado.','info');
+            });
+            function updateHomeBadges() {
+                $('badgeCountProdutos').textContent=`${state.products.length} produtos ativos`;
+                $('badgeCountClientes').textContent=`${state.clients.length} clientes cadastrados`;
+                $('badgeCountHistorico').textContent=`${state.salesHistory.length} vendas registradas`;
+                $('badgeCountEstoque').textContent=`${state.products.reduce((a,p)=>a+p.stock,0)} un. em estoque`;
+            }
+            function resetProductForm() {
+                editingProductId=null;
+                $('formCreateProduct').reset(); $('prodStock').value=''; $('prodStock').readOnly=false; $('prodStock').title='Informe o estoque inicial conferido.'; $('prodMinStock').value='10';
+                $('productFormTitle').textContent='Novo Produto';$('saveProductBtn').textContent='+ Salvar Produto';
+                $('cancelProductEditBtn').classList.add('hidden');clearFormErrors($('formCreateProduct'));
+            }
+            function startProductEdit(id) {
+                const p=state.products.find(x=>x.id===id); if(!p)return;
+                editingProductId=id;
+                $('prodName').value=p.name;$('prodCategory').value=p.category;$('prodPrice').value=p.price;
+                $('prodStock').value=p.stock;$('prodStock').readOnly=true;$('prodStock').title='Para repor mercadorias, utilize Registrar entrada. O saldo é somente leitura durante a edição.';$('prodMinStock').value=p.minStock;
+                $('productFormTitle').textContent=`Editar produto ${productCode(p)} (saldo de estoque somente leitura)`;
+                $('saveProductBtn').textContent='Salvar alterações';$('cancelProductEditBtn').classList.remove('hidden');
+                clearFormErrors($('formCreateProduct'));
+                $('formCreateProduct').scrollIntoView({behavior:'smooth',block:'center'});$('prodName').focus();
+            }
+            $('cancelProductEditBtn').addEventListener('click',resetProductForm);
+            function renderProductsScreen() {
+                $('productsTableCount').textContent=`Total: ${state.products.length} itens`;
+                const tbody=$('productsTableBody');
+                tbody.innerHTML=state.products.length ? state.products.map(p=>`
+                    <tr class="hover:bg-navy-800/40 transition-colors">
+                        <td class="py-3 px-3 font-medium text-white">${escapeHTML(p.name)} <span class="block text-xs text-slate-400">${productCode(p)}</span></td>
+                        <td class="py-3 px-3 text-slate-300"><span class="px-2.5 py-1 rounded-lg bg-navy-950 border border-slate-700 text-xs">${escapeHTML(p.category)}</span></td>
+                        <td class="py-3 px-3 text-right font-semibold text-gold-300">${formatBRL(p.price)}</td>
+                        <td class="py-3 px-3 text-center"><div class="space-y-1">${badgeStatus(p)}<span class="block text-xs text-slate-300">${p.stock} un. · mín. ${p.minStock}</span></div></td>
+                        <td class="py-3 px-3 text-right whitespace-nowrap"><button type="button" data-edit-prod="${p.id}" class="text-xs text-gold-200 font-semibold px-2 py-1 rounded hover:bg-gold-500/15">Editar</button><button type="button" data-del-prod="${p.id}" class="text-xs text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/40">Excluir</button></td>
+                    </tr>`).join('') : '<tr><td colspan="5" class="py-6 text-center text-slate-300">Nenhum produto cadastrado.</td></tr>';
+                tbody.querySelectorAll('[data-edit-prod]').forEach(b=>b.addEventListener('click',()=>startProductEdit(Number(b.dataset.editProd))));
+                tbody.querySelectorAll('[data-del-prod]').forEach(b=>b.addEventListener('click',()=>{
+                    const id=Number(b.dataset.delProd),p=state.products.find(x=>x.id===id);if(!p)return;
+                    askConfirmation('Excluir produto?',`Excluir "${p.name}" do catálogo? Histórico de movimentações e vendas será preservado. Um eventual item no carrinho será removido.`, 'Excluir produto', ()=>{
+                        const index=state.products.indexOf(p),cartRows=state.cart.filter(i=>i.productId===id).map(i=>({...i}));
+                        state.products.splice(index,1);state.cart=state.cart.filter(i=>i.productId!==id);
+                        if(editingProductId===id)resetProductForm();refreshAllViews();
+                        showToast(`Produto "${p.name}" excluído.`, 'warning',()=>{
+                            if(state.products.some(x=>x.id===id))return;
+                            state.products.splice(Math.min(index,state.products.length),0,p);
+                            cartRows.forEach(item=>{if(!state.cart.some(i=>i.productId===id))state.cart.push(item);});
+                            refreshAllViews();showToast('Exclusão do produto desfeita.');
+                        });
+                    });
+                }));
+            }
+            $('formCreateProduct').addEventListener('submit',e=>{
+                e.preventDefault();
+                const name=clean($('prodName').value),category=$('prodCategory').value;
+                const priceValue=$('prodPrice').value,stockValue=$('prodStock').value,minValue=$('prodMinStock').value;
+                if(name.length<3)return fieldError('prodName','Informe um nome com pelo menos 3 caracteres.');
+                if(state.products.some(p=>p.id!==editingProductId && keyName(p.name)===keyName(name)))return fieldError('prodName','Já existe um produto com este nome. Edite o cadastro existente.');
+                if(!validMoney(priceValue))return fieldError('prodPrice','Informe um preço maior que zero, com até duas casas decimais.');
+                if(!validInteger(stockValue,0))return fieldError('prodStock','Informe o saldo conferido como número inteiro (zero ou mais).');
+                if(!validInteger(minValue,0))return fieldError('prodMinStock','Informe um estoque mínimo como número inteiro (zero ou mais).');
+                const stock=Number(stockValue),minStock=Number(minValue),price=Math.round(Number(priceValue)*100)/100;
+                const old=state.products.find(p=>p.id===editingProductId);
+                if(old) {
+                    if(old.stock!==stock)return fieldError('prodStock','Para alterar o saldo de um produto existente, utilize “Registrar entrada de mercadorias”. O saldo não é editável aqui para preservar o histórico.');
+                    Object.assign(old,{name,category,price,minStock});
+                    state.cart.filter(i=>i.productId===old.id).forEach(i=>{i.name=name;i.price=price;});
+                    resetProductForm();refreshAllViews();showToast(`Produto "${name}" atualizado.`);
+                } else {
+                    const id=++sequence.product;
+                    state.products.unshift({id,name,category,price,stock,minStock});
+                    if(stock>0) {
+                        const date=dateTime();
+                        state.stockEntries.unshift({id:++sequence.entry,date,productId:id,productName:name,supplier:'Saldo inicial de cadastro',qty:stock,finalStock:stock});
+                        state.stockMovements.unshift({id:++sequence.movement,date,type:'ENTRADA',productId:id,productName:name,qty:stock,document:'Saldo inicial',party:'Cadastro de produto',balanceAfter:stock});
+                    }
+                    resetProductForm();refreshAllViews();showToast(`Produto "${name}" cadastrado.`);
+                }
+            });
+            function renderStockEntryScreen() {
+                const sel=$('entryProductSelect'),previous=sel.value;
+                sel.innerHTML='<option value="">Selecione um produto</option>'+state.products.map(p=>`<option value="${p.id}">${escapeHTML(productCode(p))} — ${escapeHTML(p.name)} (${p.stock} un.)</option>`).join('');
+                if(state.products.some(p=>String(p.id)===previous))sel.value=previous;
+                const tbody=$('entriesTableBody');
+                tbody.innerHTML=state.stockEntries.length ? state.stockEntries.map(x=>`
+                    <tr class="hover:bg-navy-800/40"><td class="py-3 px-3 text-xs text-slate-300">${escapeHTML(x.date)}</td><td class="py-3 px-3 font-medium text-white">${escapeHTML(x.productName)}</td><td class="py-3 px-3 text-slate-300 text-xs">${escapeHTML(x.supplier||'Entrada avulsa')}</td><td class="py-3 px-3 text-center font-bold text-emerald-400">+${x.qty} un.</td><td class="py-3 px-3 text-center text-gold-300">${x.finalStock} un.</td></tr>`).join('') : '<tr><td colspan="5" class="py-6 text-center text-slate-300">Nenhuma entrada registrada.</td></tr>';
+            }
+            $('formStockEntry').addEventListener('submit',e=>{
+                e.preventDefault();
+                const id=Number($('entryProductSelect').value),product=state.products.find(p=>p.id===id),v=$('entryQuantity').value;
+                if(!product)return fieldError('entryProductSelect','Selecione o produto que recebeu mercadorias.');
+                if(!validInteger(v,1))return fieldError('entryQuantity','Digite uma quantidade inteira maior que zero.');
+                const qty=Number(v);if(!Number.isSafeInteger(product.stock+qty))return fieldError('entryQuantity','Quantidade excessiva. Informe um valor menor.');
+                const supplier=clean($('entrySupplier').value)||'Reposição direta';
+                product.stock+=qty;const date=dateTime();
+                state.stockEntries.unshift({id:++sequence.entry,date,productId:product.id,productName:product.name,supplier,qty,finalStock:product.stock});
+                state.stockMovements.unshift({id:++sequence.movement,date,type:'ENTRADA',productId:product.id,productName:product.name,qty,document:supplier,party:supplier,balanceAfter:product.stock});
+                $('entryQuantity').value='';$('entrySupplier').value='';
+                refreshAllViews();showToast(`Entrada de ${qty} unidade(s) registrada para "${product.name}".`);
+            });
+            function renderPosOptions() {
+                const client=$('posClientSelect'),selected=client.dataset.nextSelection||client.value||'Cliente Balcão';
+                delete client.dataset.nextSelection;
+                client.innerHTML='<option value="Cliente Balcão">Cliente Balcão (consumidor final)</option>'+state.clients.map(c=>`<option value="${escapeHTML(c.name)}">${escapeHTML(c.name)} (${escapeHTML(c.city)})</option>`).join('');
+                client.value=Array.from(client.options).some(o=>o.value===selected)?selected:'Cliente Balcão';
+                renderPosProducts();renderPosCart();
+            }
+            function renderPosProducts() {
+                const query=keyName($('posSearchInput').value),sel=$('posProductSelect'),previous=sel.value;
+                const filtered=state.products.filter(p=>keyName(p.name).includes(query)||keyName(productCode(p)).includes(query)||keyName(productCode(p).replace('#','')).includes(query));
+                sel.innerHTML='<option value="">'+(filtered.length?'Selecione um produto':'Nenhum produto encontrado')+'</option>'+filtered.map(p=>`<option value="${p.id}" ${p.stock===0?'disabled':''}>${productCode(p)} — ${escapeHTML(p.name)} — ${formatBRL(p.price)} (${p.stock} em estoque)</option>`).join('');
+                if(filtered.some(p=>String(p.id)===previous&&p.stock>0))sel.value=previous;
+                $('posSearchHint').textContent=filtered.length?`${filtered.length} produto(s) encontrado(s). Itens sem estoque não podem ser vendidos.`:'Nenhum resultado. Revise o nome ou o código do produto.';
+            }
+            $('posSearchInput').addEventListener('input',renderPosProducts);
+            function renderPosCart() {
+                const tbody=$('posCartTableBody');
+                tbody.innerHTML=state.cart.length ? state.cart.map(item=>{
+                    const product=state.products.find(p=>p.id===item.productId),available=product?.stock||0;
+                    return `<tr><td class="py-2.5 px-2 font-medium text-white">${escapeHTML(item.name)}</td>
+                        <td class="py-2.5 px-2 text-center"><input data-cart-qty="${item.productId}" type="number" min="1" max="${available}" step="1" value="${item.qty}" aria-label="Quantidade de ${escapeHTML(item.name)}" class="w-20 px-2 py-2 rounded-lg bg-navy-950 border border-slate-600 text-sm text-white text-center"/></td>
+                        <td class="py-2.5 px-2 text-right text-slate-200">${formatBRL(item.price)}</td>
+                        <td class="py-2.5 px-2 text-right font-semibold text-gold-300">${formatBRL(item.price*item.qty)}</td>
+                        <td class="py-2.5 px-2 text-right"><button type="button" data-cart-remove="${item.productId}" class="text-xs text-rose-300 hover:text-rose-200">Remover</button></td></tr>`;
+                }).join('') : '<tr><td colspan="5" class="py-6 text-center text-xs text-slate-300">Carrinho vazio. Pesquise um produto e clique em “Adicionar item”.</td></tr>';
+                tbody.querySelectorAll('[data-cart-remove]').forEach(b=>b.addEventListener('click',()=>{
+                    state.cart=state.cart.filter(i=>i.productId!==Number(b.dataset.cartRemove));renderPosCart();
+                }));
+                tbody.querySelectorAll('[data-cart-qty]').forEach(input=>input.addEventListener('change',()=>{
+                    const id=Number(input.dataset.cartQty),item=state.cart.find(i=>i.productId===id),product=state.products.find(p=>p.id===id);
+                    if(!item||!product)return requestAnimationFrame(renderPosCart);
+                    if(!validInteger(input.value,1)){showToast('A quantidade do carrinho deve ser um número inteiro maior que zero.','error');return requestAnimationFrame(renderPosCart);}
+                    const qty=Number(input.value);
+                    if(qty>product.stock){showToast(`Estoque insuficiente: ${product.stock} un. disponíveis para ${product.name}.`,'error');return requestAnimationFrame(renderPosCart);}
+                    item.qty=qty;requestAnimationFrame(renderPosCart);
+                }));
+                const qty=state.cart.reduce((a,p)=>a+p.qty,0),value=state.cart.reduce((a,p)=>a+p.qty*p.price,0);
+                $('posSummaryItemsCount').textContent=`${qty} item(ns)`;$('posSummaryTotal').textContent=formatBRL(value);
+                decorateMobileTables();
+            }
+            $('formAddCartItem').addEventListener('submit',e=>{
+                e.preventDefault();
+                const id=Number($('posProductSelect').value),product=state.products.find(p=>p.id===id),v=$('posQuantity').value;
+                if(!product)return fieldError('posProductSelect','Selecione um produto disponível na lista.');
+                if(!validInteger(v,1))return fieldError('posQuantity','Informe uma quantidade inteira maior que zero.');
+                const qty=Number(v),item=state.cart.find(i=>i.productId===id);
+                if(qty+(item?.qty||0)>product.stock)return fieldError('posQuantity',`Estoque insuficiente. Disponível: ${product.stock} un.; já no carrinho: ${item?.qty||0} un.`);
+                if(item)item.qty+=qty;else state.cart.push({productId:id,name:product.name,price:product.price,qty});
+                $('posQuantity').value='1';renderPosCart();showToast(`"${product.name}" adicionado à venda.`);
+            });
+            $('clearCartBtn').addEventListener('click',()=>{
+                if(!state.cart.length)return showToast('O carrinho já está vazio.','info');
+                askConfirmation('Limpar carrinho?',`Remover todos os ${state.cart.reduce((a,i)=>a+i.qty,0)} itens da venda atual?`, 'Limpar carrinho',()=>{
+                    const snapshot=state.cart.map(i=>({...i}));state.cart=[];renderPosCart();
+                    showToast('Carrinho limpo.','warning',()=>{
+                        // Não recupera itens indisponíveis nem ultrapassa o estoque.
+                        if(state.cart.length)return showToast('Não foi possível desfazer: o carrinho já foi alterado.','warning');
+                        state.cart=snapshot.filter(i=>state.products.some(p=>p.id===i.productId&&p.stock>=i.qty));
+                        renderPosCart();showToast('Carrinho restaurado.');
+                    });
+                });
+            });
+            $('finalizeSaleBtn').addEventListener('click',()=>{
+                if(!state.cart.length)return showToast('Adicione pelo menos um produto para finalizar a venda.','error');
+                // Validar todos os itens antes de alterar qualquer saldo.
+                for(const item of state.cart) {
+                    const p=state.products.find(p=>p.id===item.productId);
+                    if(!p||!validInteger(item.qty,1)||item.qty>p.stock)return showToast(`Revise o estoque e a quantidade de "${item.name}" antes de finalizar.`,'error');
+                }
+                const client=$('posClientSelect').value||'Cliente Balcão',payment=$('posPaymentMethod').value;
+                const total=state.cart.reduce((acc,item)=>acc+Math.round(item.price*100)*item.qty,0)/100;
+                const id=`#${nextSaleNumber++}`,date=dateTime(),items=state.cart.map(item=>`${item.qty}x ${item.name}`).join(', ');
+                const sale={id,date,client,payment,total,items};
+                state.cart.forEach(item=>{
+                    const p=state.products.find(p=>p.id===item.productId);p.stock-=item.qty;
+                    state.stockMovements.unshift({id:++sequence.movement,date,type:'SAIDA',productId:p.id,productName:p.name,qty:item.qty,document:`Venda ${id}`,party:client,balanceAfter:p.stock});
+                });
+                state.salesHistory.unshift(sale);lastSale=sale;state.cart=[];
+                $('posSearchInput').value='';$('posQuantity').value='1';
+                refreshAllViews();
+                $('saleSuccessDetails').textContent=`Venda ${id} • Total: ${formatBRL(total)} • ${client}`;
+                showModal('saleSuccessModal','saleSuccessReceiptBtn');
+            });
+            $('saleSuccessCloseBtn').addEventListener('click',()=>closeModal('saleSuccessModal'));
+            $('saleSuccessReceiptBtn').addEventListener('click',()=>{
+                closeModal('saleSuccessModal',false);if(lastSale)openReceiptModal(lastSale);
+            });
+            function resetClientForm() {
+                editingClientId=null;$('formCreateClient').reset();clearFormErrors($('formCreateClient'));
+                $('clientFormTitle').textContent='Novo Cliente ou Pesqueiro';
+                $('saveClientBtn').textContent='+ Salvar Cliente';$('cancelClientEditBtn').classList.add('hidden');
+            }
+            function startClientEdit(id) {
+                const c=state.clients.find(c=>c.id===id);if(!c)return;
+                editingClientId=id;
+                $('clientName').value=c.name;$('clientPhone').value=c.phone;$('clientDoc').value=c.doc;
+                $('clientCity').value=c.city;$('clientNotes').value=c.notes||'';
+                $('clientFormTitle').textContent='Editar cliente';$('saveClientBtn').textContent='Salvar alterações';
+                $('cancelClientEditBtn').classList.remove('hidden');clearFormErrors($('formCreateClient'));
+                $('formCreateClient').scrollIntoView({behavior:'smooth',block:'center'});$('clientName').focus();
+            }
+            $('cancelClientEditBtn').addEventListener('click',resetClientForm);
+            function renderClientsScreen() {
+                const tbody=$('clientsTableBody');
+                tbody.innerHTML=state.clients.length?state.clients.map(c=>`<tr class="hover:bg-navy-800/40">
+                    <td class="py-3 px-3 font-medium text-white">${escapeHTML(c.name)}</td>
+                    <td class="py-3 px-3 text-gold-300">${escapeHTML(c.phone)}</td>
+                    <td class="py-3 px-3 text-slate-200 text-xs">${escapeHTML(c.doc)}</td>
+                    <td class="py-3 px-3 text-slate-200">${escapeHTML(c.city)}</td>
+                    <td class="py-3 px-3 text-slate-300 text-xs">${escapeHTML(c.notes||'—')}</td>
+                    <td class="py-3 px-3 text-right whitespace-nowrap"><button type="button" data-edit-client="${c.id}" class="text-xs text-gold-200 font-semibold px-2 py-1 rounded hover:bg-gold-500/15">Editar</button><button type="button" data-del-client="${c.id}" class="text-xs text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/40">Excluir</button></td>
+                </tr>`).join(''):'<tr><td colspan="6" class="py-6 text-center text-slate-300">Nenhum cliente cadastrado.</td></tr>';
+                tbody.querySelectorAll('[data-edit-client]').forEach(b=>b.addEventListener('click',()=>startClientEdit(Number(b.dataset.editClient))));
+                tbody.querySelectorAll('[data-del-client]').forEach(b=>b.addEventListener('click',()=>{
+                    const id=Number(b.dataset.delClient),c=state.clients.find(c=>c.id===id);if(!c)return;
+                    askConfirmation('Excluir cliente?',`Excluir o cadastro de "${c.name}"? As vendas anteriores permanecerão no histórico.`, 'Excluir cliente',()=>{
+                        const index=state.clients.indexOf(c);state.clients.splice(index,1);
+                        if(editingClientId===id)resetClientForm();refreshAllViews();
+                        showToast(`Cliente "${c.name}" excluído.`,'warning',()=>{
+                            if(state.clients.some(x=>x.id===id))return;
+                            state.clients.splice(Math.min(index,state.clients.length),0,c);refreshAllViews();showToast('Exclusão do cliente desfeita.');
+                        });
+                    });
+                }));
+            }
+            $('formCreateClient').addEventListener('submit',e=>{
+                e.preventDefault();
+                const name=clean($('clientName').value),phone=maskPhone($('clientPhone').value),doc=maskDoc($('clientDoc').value),city=clean($('clientCity').value),notes=clean($('clientNotes').value);
+                if(name.length<3)return fieldError('clientName','Informe nome ou razão social com pelo menos 3 caracteres.');
+                if(![10,11].includes(digits(phone).length))return fieldError('clientPhone','Informe um telefone com DDD e 10 ou 11 dígitos.');
+                if(![11,14].includes(digits(doc).length)||/^(\d)\1+$/.test(digits(doc)))return fieldError('clientDoc','Informe 11 dígitos para CPF ou 14 para CNPJ; números repetidos não são aceitos.');
+                if(!city)return fieldError('clientCity','Informe a cidade do cliente.');
+                if(state.clients.some(c=>c.id!==editingClientId&&digits(c.doc)===digits(doc)))return fieldError('clientDoc','Já existe um cliente com este CPF/CNPJ. Edite o cadastro existente.');
+                if(state.clients.some(c=>c.id!==editingClientId&&keyName(c.name)===keyName(name)))return fieldError('clientName','Já existe um cliente com este nome. Edite o cadastro existente.');
+                const existing=state.clients.find(c=>c.id===editingClientId);
+                if(existing){
+                    const previousName=existing.name;
+                    Object.assign(existing,{name,phone,doc,city,notes});
+                    if($('posClientSelect').value===previousName)$('posClientSelect').dataset.nextSelection=name;
+                    resetClientForm();refreshAllViews();showToast(`Cadastro de "${name}" atualizado.`);
+                } else {
+                    state.clients.unshift({id:++sequence.client,name,phone,doc,city,notes});
+                    resetClientForm();refreshAllViews();showToast(`Cliente "${name}" cadastrado.`);
+                }
+            });
+            function renderHistoryScreen() {
+                const query=keyName($('historySearchInput').value),payment=$('historyPaymentFilter').value;
+                const records=state.salesHistory.filter(s=>(keyName(s.id+' '+s.client+' '+s.items).includes(query))&&(payment==='TODOS'||s.payment===payment));
+                const tbody=$('historyTableBody');
+                tbody.innerHTML=records.length?records.map(s=>`<tr class="hover:bg-navy-800/40">
+                    <td class="py-3.5 px-4 font-bold text-gold-400">${escapeHTML(s.id)}</td><td class="py-3.5 px-4 text-xs text-slate-300">${escapeHTML(s.date)}</td>
+                    <td class="py-3.5 px-4 font-medium text-white">${escapeHTML(s.client)}</td><td class="py-3.5 px-4 text-xs text-slate-200 min-w-[160px]">${escapeHTML(s.items)}</td>
+                    <td class="py-3.5 px-4 text-center text-xs text-slate-200">${escapeHTML(s.payment)}</td><td class="py-3.5 px-4 text-right font-bold text-gold-300">${formatBRL(s.total)}</td>
+                    <td class="py-3.5 px-4 text-right"><button type="button" data-view-receipt="${s.id}" class="px-3 py-1.5 rounded-lg bg-gold-500/15 border border-gold-500/40 text-gold-200 text-xs hover:bg-gold-500/30">Ver recibo</button></td></tr>`).join(''):'<tr><td colspan="7" class="py-6 text-center text-slate-300">Nenhuma venda encontrada para o filtro.</td></tr>';
+                tbody.querySelectorAll('[data-view-receipt]').forEach(b=>b.addEventListener('click',()=>{
+                    const sale=state.salesHistory.find(s=>s.id===b.dataset.viewReceipt);if(sale)openReceiptModal(sale);
+                }));
+                decorateMobileTables();
+            }
+            $('historySearchInput').addEventListener('input',renderHistoryScreen);
+            $('historyPaymentFilter').addEventListener('change',renderHistoryScreen);
+            function openReceiptModal(sale) {
+                $('receiptModalCode').textContent=`Venda ${sale.id}`;
+                $('receiptModalBody').innerHTML=`
+                    <div class="p-4 rounded-2xl bg-navy-950 border border-slate-800 space-y-2.5">
+                        <p class="flex justify-between gap-4"><span class="text-slate-300">Data e hora:</span><strong class="text-white">${escapeHTML(sale.date)}</strong></p>
+                        <p class="flex justify-between gap-4"><span class="text-slate-300">Cliente:</span><strong class="text-white text-right">${escapeHTML(sale.client)}</strong></p>
+                        <p class="flex justify-between gap-4"><span class="text-slate-300">Pagamento:</span><strong class="text-gold-300">${escapeHTML(sale.payment)}</strong></p>
+                    </div><div class="p-4 rounded-2xl bg-navy-950 border border-slate-800"><p class="text-xs text-slate-300 mb-1">Itens comprados</p><p class="text-white">${escapeHTML(sale.items)}</p></div>
+                    <div class="flex justify-between items-center pt-2"><strong class="text-slate-200">Total</strong><strong class="font-display text-xl text-gold-300">${formatBRL(sale.total)}</strong></div>`;
+                showModal('receiptModal','closeReceiptModalBtn');
+            }
+            $('closeReceiptModalBtn').setAttribute('aria-label','Fechar recibo');
+            $('closeReceiptModalBtn').addEventListener('click',()=>closeModal('receiptModal'));
+            $('closeReceiptBottomBtn').addEventListener('click',()=>closeModal('receiptModal'));
+            const activeBanner=$('activeProductFilterBanner');
+            let selectedStockProductId=null;
+            function showStockTab(tab) {
+                const first=tab==='posicao';
+                $('estoqueSubViewPosicao').classList.toggle('hidden',!first);
+                $('estoqueSubViewMovimentacoes').classList.toggle('hidden',first);
+                ['tabBtnPosicao','tabBtnMovimentacoes'].forEach((id,i)=>{
+                    const selected=first=== (i===0);
+                    $(id).className=selected?'px-5 py-2.5 rounded-xl btn-gold-gradient text-navy-950 font-bold text-xs uppercase tracking-wider shadow-gold-btn':'px-5 py-2.5 rounded-xl text-slate-200 hover:text-gold-300 hover:bg-navy-800/70 font-semibold text-xs uppercase tracking-wider';
+                    $(id).setAttribute('aria-selected',String(selected));
+                });
+            }
+            $('tabBtnPosicao').addEventListener('click',()=>showStockTab('posicao'));
+            $('tabBtnMovimentacoes').addEventListener('click',()=>showStockTab('movimentacoes'));
+            $('clearProductKardexFilterBtn').addEventListener('click',()=>{
+                $('stockMovSearchInput').value='';selectedStockProductId=null;activeBanner.classList.add('hidden');activeBanner.classList.remove('flex');renderStockScreen();
+            });
+            function renderStockScreen() {
+                const totalUnits=state.products.reduce((a,p)=>a+p.stock,0),totalValue=state.products.reduce((a,p)=>a+p.stock*p.price,0);
+                const ins=state.stockMovements.filter(m=>m.type==='ENTRADA'),outs=state.stockMovements.filter(m=>m.type==='SAIDA');
+                const low=state.products.filter(p=>stockKind(p)!=='NORMAL').length;
+                $('kpiTotalUnits').textContent=`${totalUnits} un.`;
+                $('kpiTotalSkus').textContent=`em ${state.products.length} produtos cadastrados`;
+                $('kpiStockValue').textContent=formatBRL(totalValue);
+                $('kpiTotalIn').textContent=`+${ins.reduce((a,m)=>a+m.qty,0)} un.`;
+                $('kpiCountIn').textContent=`${ins.length} lançamentos de entrada`;
+                $('kpiTotalOut').textContent=`-${outs.reduce((a,m)=>a+m.qty,0)} un.`;
+                $('kpiCountOut').textContent=`${outs.length} saídas registradas`;
+                $('kpiLowStockCount').textContent=`${low} ${low===1?'item':'itens'}`;
+                const query=keyName($('stockPosSearchInput').value),cat=$('stockPosCategoryFilter').value,status=$('stockPosStatusFilter').value;
+                const products=state.products.filter(p=>(keyName(p.name).includes(query)||keyName(productCode(p)).includes(query)||keyName(productCode(p).slice(1)).includes(query))&&(cat==='TODAS'||cat===p.category)&&(status==='TODOS'||status===stockKind(p)));
+                const tbody=$('stockPositionTableBody');
+                tbody.innerHTML=products.length?products.map(p=>{
+                    const moves=state.stockMovements.filter(m=>m.productId===p.id);
+                    const incoming=moves.filter(m=>m.type==='ENTRADA').reduce((a,m)=>a+m.qty,0);
+                    const outgoing=moves.filter(m=>m.type==='SAIDA').reduce((a,m)=>a+m.qty,0);
+                    return `<tr class="hover:bg-navy-800/40"><td class="py-3 px-3 font-mono text-xs text-gold-300">${productCode(p)}</td>
+                        <td class="py-3 px-3 font-medium text-white">${escapeHTML(p.name)}</td>
+                        <td class="py-3 px-3 text-slate-200">${escapeHTML(p.category)}</td>
+                        <td class="py-3 px-3 text-center text-emerald-400">+${incoming} un.</td>
+                        <td class="py-3 px-3 text-center text-amber-400">-${outgoing} un.</td>
+                        <td class="py-3 px-3 text-center font-bold text-white">${p.stock} un. <span class="block text-xs text-slate-300">mín. ${p.minStock}</span></td>
+                        <td class="py-3 px-3 text-right text-gold-300">${formatBRL(p.stock*p.price)}</td>
+                        <td class="py-3 px-3 text-center">${badgeStatus(p)}</td>
+                        <td class="py-3 px-3 text-right whitespace-nowrap"><button type="button" data-quick-entry="${p.id}" class="px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs hover:bg-emerald-500/30">+ Entrada</button> <button type="button" data-stock-history="${p.id}" class="px-2.5 py-1 rounded-lg bg-gold-500/15 border border-gold-500/40 text-gold-200 text-xs hover:bg-gold-500/30">Ver histórico</button></td></tr>`;
+                }).join(''):'<tr><td colspan="9" class="py-6 text-center text-slate-300">Nenhuma mercadoria encontrada para os filtros.</td></tr>';
+                tbody.querySelectorAll('[data-quick-entry]').forEach(b=>b.addEventListener('click',()=>{
+                    navigateTo('entrada');$('entryProductSelect').value=b.dataset.quickEntry;$('entryQuantity').focus();
+                }));
+                tbody.querySelectorAll('[data-stock-history]').forEach(b=>b.addEventListener('click',()=>{
+                    const p=state.products.find(p=>p.id===Number(b.dataset.stockHistory));if(!p)return;
+                    selectedStockProductId=p.id; $('stockMovSearchInput').value=p.name;$('activeProductFilterText').textContent=`Histórico de: ${p.name}`;
+                    activeBanner.classList.remove('hidden');activeBanner.classList.add('flex');
+                    showStockTab('movimentacoes');renderStockScreen();
+                }));
+                const movQuery=keyName($('stockMovSearchInput').value),movType=$('stockMovTypeFilter').value;
+                const filtered=state.stockMovements.filter(m=>
+                    (selectedStockProductId!==null ? m.productId===selectedStockProductId : keyName(m.productName+' '+m.document+' '+m.party).includes(movQuery))
+                    &&(movType==='TODAS'||m.type===movType));
+                $('stockMovementsCountBadge').textContent=`${filtered.length} movimentação(ões) listada(s)`;
+                $('stockMovementsTableBody').innerHTML=filtered.length?filtered.map(m=>`
+                    <tr class="hover:bg-navy-800/40"><td class="py-3.5 px-4 text-xs text-slate-300">${escapeHTML(m.date)}</td>
+                        <td class="py-3.5 px-4 text-center">${m.type==='ENTRADA'?'↑ Entrada':'↓ Saída'}</td>
+                        <td class="py-3.5 px-4 font-medium text-white">${escapeHTML(m.productName)}</td>
+                        <td class="py-3.5 px-4 text-center font-bold ${m.type==='ENTRADA'?'text-emerald-400':'text-amber-400'}">${m.type==='ENTRADA'?'+':'-'}${m.qty} un.</td>
+                        <td class="py-3.5 px-4 text-gold-300">${escapeHTML(m.document)}</td>
+                        <td class="py-3.5 px-4 text-slate-200">${escapeHTML(m.party)}</td>
+                        <td class="py-3.5 px-4 text-center text-white">${m.balanceAfter} un.</td></tr>`).join(''):'<tr><td colspan="7" class="py-6 text-center text-slate-300">Nenhuma movimentação encontrada.</td></tr>';
+                decorateMobileTables();
+            }
+            ['stockPosSearchInput','stockMovSearchInput'].forEach(id=>$(id).addEventListener('input',()=>{
+                if(id==='stockMovSearchInput'){selectedStockProductId=null;activeBanner.classList.add('hidden');activeBanner.classList.remove('flex');}
+                renderStockScreen();
+            }));
+            ['stockPosCategoryFilter','stockPosStatusFilter','stockMovTypeFilter'].forEach(id=>$(id).addEventListener('change',renderStockScreen));
+            function refreshAllViews() {
+                updateHomeBadges();renderProductsScreen();renderStockEntryScreen();renderPosOptions();renderClientsScreen();renderHistoryScreen();renderStockScreen();decorateMobileTables();
+            }
+            refreshAllViews();
+        });
+    </script>
+</body>
+</html>
